@@ -19,6 +19,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Text="?" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" MouseDown="TextBlock_MouseDown"/>
         <TextBlock Grid.Column="1" Grid.Row="0" Text="?" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" MouseDown="TextBlock_MouseDown"/>
@@ -36,7 +37,10 @@
         <TextBlock Grid.Column="1" Grid.Row="3" Text="?" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" MouseDown="TextBlock_MouseDown"/>
         <TextBlock Grid.Column="2" Grid.Row="3" Text="?" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" MouseDown="TextBlock_MouseDown"/>
         <TextBlock Grid.Column="3" Grid.Row="3" Text="?" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" MouseDown="TextBlock_MouseDown"/>
-        <TextBlock x:Name="timeTextBlock" Grid.Row="4" Text="Elapsed time" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Grid.ColumnSpan="4" MouseDown="TimeTextBlock_MouseDown"/>
+        <TextBlock x:Name="timeTextBlock" Grid.Row="5" Text="Elapsed time" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Grid.ColumnSpan="4" MouseDown="TimeTextBlock_MouseDown"/>
+        <Button x:Name="StartButton" Margin="59,0,25,0" Grid.Row="4" VerticalAlignment="Center" FontSize="15" RenderTransformOrigin="-0.132,0.525" Grid.ColumnSpan="2" Content="Start" Background="#FF66DE68" BorderBrush="#FF1CC746" Height="38" Click="StartButton_Click"/>
+        <Button x:Name="ResetButton" Grid.Column="2" Content="Reset" Margin="25,0,59,0" Grid.Row="4" VerticalAlignment="Center" FontSize="15" Grid.ColumnSpan="2" Background="#FFDCD63D" BorderBrush="#FFB5AF1B" Height="38" Click="ResetButton_Click"/>
+
 
     </Grid>
 </Window>

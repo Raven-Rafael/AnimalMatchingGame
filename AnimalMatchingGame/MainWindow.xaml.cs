@@ -72,9 +72,7 @@ namespace AnimalMatchingGame
                 }
 
             }
-            timer.Start();
-            tenthsOfSecondsElapsed = 0;
-            matchesFound = 0;
+
         }
 
         TextBlock lastTextBlockClicked;
@@ -112,6 +110,29 @@ namespace AnimalMatchingGame
                 timer.Stop();
                 timeTextBlock.Text = timeTextBlock.Text + " - Play again?";
             }
+        }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Start();
+
+            tenthsOfSecondsElapsed = 0;
+            matchesFound = 0;
+
+            if(matchesFound == 8)
+            {
+                timer.Stop();
+            }
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+            timer.Equals(0);
+            matchesFound.Equals(0);
+            SetUpGame();
+            tenthsOfSecondsElapsed = 0;
+            matchesFound = 0;
         }
     }
 }
