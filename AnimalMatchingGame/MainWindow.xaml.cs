@@ -119,11 +119,11 @@ namespace AnimalMatchingGame
             tenthsOfSecondsElapsed = 0;
             matchesFound = 0;
 
-            if(matchesFound == 8)
+            if (matchesFound == 8)
             {
                 timer.Stop();
             }
-        }
+        };;;
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
