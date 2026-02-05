@@ -24,6 +24,7 @@ namespace AnimalMatchingGame
         DispatcherTimer timer = new DispatcherTimer();
         int tenthsOfSecondsElapsed;
         int matchesFound;
+        bool gameStart;
 
         public MainWindow()
         {
@@ -82,25 +83,32 @@ namespace AnimalMatchingGame
         {
 
             TextBlock textBlock = sender as TextBlock;
+            if (gameStart == false)
+            {
+                return;
+            }
+            else 
+            {
 
-            if (findingMatch == false)
-            {
-                textBlock.Visibility = Visibility.Hidden;
-                lastTextBlockClicked = textBlock;
-                findingMatch = true;
+                if (findingMatch == false)
+                {
+                    textBlock.Visibility = Visibility.Hidden;
+                    lastTextBlockClicked = textBlock;
+                    findingMatch = true;
+                }
+                else if (textBlock.Text == lastTextBlockClicked.Text)
+                {
+                    matchesFound++;
+                    textBlock.Visibility = Visibility.Hidden;
+                    findingMatch = false;
+                }
+                else
+                {
+                    lastTextBlockClicked.Visibility = Visibility.Visible;
+                    findingMatch = false;
+                }
+            
             }
-            else if (textBlock.Text == lastTextBlockClicked.Text)
-            {
-                matchesFound++;
-                textBlock.Visibility = Visibility.Hidden;
-                findingMatch = false;
-            }
-            else
-            {
-                lastTextBlockClicked.Visibility = Visibility.Visible;
-                findingMatch = false;
-            }
-
         }
 
         private void TimeTextBlock_MouseDown(object sender, MouseButtonEventArgs e)
@@ -115,7 +123,7 @@ namespace AnimalMatchingGame
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Start();
-
+            gameStart = true;
             tenthsOfSecondsElapsed = 0;
             matchesFound = 0;
 
@@ -123,7 +131,7 @@ namespace AnimalMatchingGame
             {
                 timer.Stop();
             }
-        };;;
+        }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
